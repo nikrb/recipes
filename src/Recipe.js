@@ -37,7 +37,10 @@ export default class Recipe extends React.Component {
   };
   addIngredient = () => {
     this.dirty = true;
-    this.setState( { ingredients: [...this.state.ingredients, {text: this.state.ingredient_entry}]});
+    this.setState( {
+      ingredients: [...this.state.ingredients, {text: this.state.ingredient_entry}],
+      ingredient_entry: ""
+    });
   };
   handleKeyUp = (e) => {
     switch( e.keyCode){
@@ -50,6 +53,7 @@ export default class Recipe extends React.Component {
   };
   listClicked = (e) => {};
   deleteClicked = ( item_id) => {
+    this.dirty = true;
     console.log( "delete item:", item_id);
     const nl = this.state.ingredients.filter( item => item.text !== item_id)
     this.setState( { ingredients: nl});
