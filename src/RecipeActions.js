@@ -20,7 +20,11 @@ const updateRecipe = ( recipe) => {
         return res;
       });
   } else {
-    ret = db.recipes.update( recipe.id, recipe).then( (res) => {return 0;});
+    ret = db.recipes.update( recipe.id, recipe)
+    .then( (res) => {
+      dispatchEvent( new CustomEvent( "recipe_update_complete"));
+      return 0;
+    });
   }
   return ret;
 };
