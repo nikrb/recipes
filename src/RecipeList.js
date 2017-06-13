@@ -23,7 +23,8 @@ export default class RecipeList extends React.Component {
   componentWillUnmount = () => {
     removeEventListener( "recipe_update_complete", this.handleRecipeUpdateComplete);
   };
-  handleRecipeUpdateComplete = () => {
+  handleRecipeUpdateComplete = ( e) => {
+    console.log( "event:", e)
     this.getRecipeList();
   };
   newClick = (e) => {
