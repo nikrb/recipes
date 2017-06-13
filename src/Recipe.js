@@ -69,6 +69,7 @@ export default class Recipe extends React.Component {
           item_id={ing.text} item_text={ing.text} deleteClicked={this.deleteClicked} />
       );
     });
+    const ta_style = { width: "40em", height: "10em"};
     return (
       <div>
         <div>
@@ -87,7 +88,9 @@ export default class Recipe extends React.Component {
           <ul>{ingredients}</ul>
         </div>
         <div>
-          <textarea onChange={this.instructionChange} value={this.state.instructions}></textarea>
+          <textarea style={ta_style} rows={8} cols={30}
+            onChange={this.instructionChange} value={this.state.instructions}>
+          </textarea>
         </div>
       </div>
     );
