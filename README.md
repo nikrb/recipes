@@ -1,4 +1,4 @@
-simple recipe app for fcc.
+simple recipe app for fcc. [demo](https://nikrb.github.io/recipes)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
